@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { products } from './products.js';
 
 document.addEventListener('DOMContentLoaded', function () {
     const container = document.getElementById('threejs-container');
@@ -35,5 +36,18 @@ document.addEventListener('DOMContentLoaded', function () {
         camera.aspect = container.clientWidth / container.clientHeight;
         camera.updateProjectionMatrix();
         renderer.setSize(container.clientWidth, container.clientHeight);
+    });
+
+    // Display random 5 products
+    const productSection = document.getElementById('products');
+    const randomProducts = products.sort(() => 0.5 - Math.random()).slice(0, 5);
+    randomProducts.forEach(product => {
+        const productDiv = document.createElement('div');
+        productDiv.classList.add('product');
+        productDiv.innerHTML = `
+            <h2>${product.name}</h2>
+            <p>Price: $${product.price.toFixed(2)}</p>
+        `;
+        productSection.appendChild(productDiv);
     });
 });
