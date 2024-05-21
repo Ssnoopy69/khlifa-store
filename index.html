@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - T-shirt Store</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-commerce Website</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
     <header>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="catalog.html">Catalog</a>
-        </nav>
-        <h1>T-shirt Store</h1>
+      <img src="components/svg/logoAYD.svg" alt="Logo" class="logo" />
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="catalog.html">Catalog</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
     </header>
     <main>
-        <section id="products">
-            <div class="product">
-                <div id="threejs-container"></div>
-                <h2>3D T-shirt Model</h2>
-                <p>Stylish T-shirt - $20.00</p>
-            </div>
-        </section>
+      <section id="threejs-container"></section>
+      <section id="products">
+        <h2>Featured Products</h2>
+        <div id="product-slider" class="product-slider"></div>
+      </section>
     </main>
-    <footer>
-        <p>&copy; 2024 T-shirt Store</p>
-    </footer>
-    <script type="module" src="src/main.js"></script>
-</body>
+    <script type="module" src="./src/main.js"></script>
+  </body>
 </html>
