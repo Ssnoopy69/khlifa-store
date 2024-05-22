@@ -3,6 +3,30 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { products } from "./products.js";
 
 document.addEventListener("DOMContentLoaded", function () {
+  var parent = document.querySelector(".splitview"),
+    topPanel = parent.querySelector(".top"),
+    handle = parent.querySelector(".handle"),
+    skewHack = 0,
+    delta = 0;
+
+  // If the parent has .skewed class, set the skewHack var.
+  if (parent.className.indexOf("skewed") != -1) {
+    skewHack = 1000;
+  }
+
+  parent.addEventListener("mousemove", function (event) {
+    // Get the delta between the mouse position and center point.
+    delta = (event.clientX - window.innerWidth / 2) * 0.5;
+
+    // Move the handle.
+    handle.style.left = event.clientX + delta + "px";
+
+    // Adjust the top panel width.
+    topPanel.style.width = event.clientX + skewHack + delta + "px";
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
   const container = document.getElementById("threejs-container");
   const productSlider = document.getElementById("product-slider");
 
@@ -30,36 +54,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Load and display a random T-shirt model
   const loader = new GLTFLoader();
-  const randomProduct = products[Math.floor(Math.random() * products.length)];
-  console.log(`Loading model: components/models/${randomProduct.model}`);
-  loader.load(
-    `components/models/${randomProduct.model}`,
-    function (gltf) {
-      const model = gltf.scene;
-      model.position.set(0, -2.5, 0); // Adjust the model position if needed
-      model.scale.set(0.3, 0.3, 0.3);
-      scene.add(model);
-      console.log("Model loaded successfully", gltf);
-    },
-    undefined,
-    function (error) {
-      console.error("Error loading model", error);
-    }
-  );
-
-  // Animation
-  function animate() {
-    requestAnimationFrame(animate);
-    renderer.render(scene, camera);
-  }
-  animate();
-
-  // Handle window resize
-  window.addEventListener("resize", () => {
-    camera.aspect = container.clientWidth / container.clientHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(container.clientWidth, container.clientHeight);
-  });
 
   // Display random 5 products in a slider
   const randomProducts = products.sort(() => 0.5 - Math.random()).slice(0, 5);
@@ -137,4 +131,24 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     );
   });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  const descriptions = document.querySelectorAll(".description");
+
+  function checkScroll() {
+    const triggerBottom = (window.innerHeight / 5) * 4;
+
+    descriptions.forEach((description) => {
+      const descriptionTop = description.getBoundingClientRect().top;
+
+      if (descriptionTop < triggerBottom) {
+        description.classList.add("show");
+      } else {
+        description.classList.remove("show");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", checkScroll);
+  checkScroll();
 });

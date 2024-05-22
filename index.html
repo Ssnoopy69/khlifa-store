@@ -23,9 +23,79 @@
     </header>
     <main>
       <div id="threejs-container"></div>
+      <div class="splitview skewed">
+        <div class="panel bottom">
+          <div class="content">
+            <div class="description">
+              <h1>The original image.</h1>
+              <p>
+                This is how the image looks like before applying a duotone
+                effect.
+              </p>
+            </div>
+
+            <img src="./components/images/noprint.png" alt="Original" />
+          </div>
+        </div>
+
+        <div class="panel top">
+          <div class="content">
+            <div class="description">
+              <h1>The duotone image.</h1>
+              <p>
+                This is how the image looks like after applying a duotone
+                effect.
+              </p>
+            </div>
+
+            <img src="./components/images/tshirtedited.png" alt="Duotone" />
+          </div>
+        </div>
+
+        <div class="handle"></div>
+      </div>
       <div id="product-slider" class="product-slider tns-slider">
         <!-- Slider items will be injected here by JavaScript -->
       </div>
+
+      <section id="description-section">
+        <div class="description left">
+          <img src="image1.jpg" alt="Description Image" />
+          <div class="text">
+            <h2>Description 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+        <div class="rope"></div>
+        <div class="description right">
+          <img src="image2.jpg" alt="Description Image" />
+          <div class="text">
+            <h2>Description 2</h2>
+            <p>
+              Phasellus iaculis nisi vel justo feugiat, nec ultricies sapien
+              aliquam.
+            </p>
+          </div>
+        </div>
+        <div class="rope"></div>
+        <div class="description left">
+          <img src="image3.jpg" alt="Description Image" />
+          <div class="text">
+            <h2>Description 3</h2>
+            <p>Morbi sit amet dui at nulla volutpat aliquam.</p>
+          </div>
+        </div>
+        <div class="rope"></div>
+        <div class="description right">
+          <img src="image4.jpg" alt="Description Image" />
+          <div class="text">
+            <h2>Description 4</h2>
+            <p>
+              Donec placerat nunc ac velit feugiat, in pharetra velit auctor.
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.js"></script>

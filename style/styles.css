@@ -33,22 +33,10 @@ nav a {
 }
 
 main {
-  padding: 20px;
+  padding: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-#threejs-container {
-  width: 100%;
-  height: 400px;
-  max-width: 100%; /* Limit the width of the model container */
-  border: 2px solid #ffd700; /* Yellow gold */
-  margin-bottom: 20px;
-  border-radius: 10px;
-  position: relative;
-  z-index: 1; /* Ensure the 3D model container is behind the slider controls */
-  background-color: #fff; /* White background */
 }
 
 #products {
@@ -117,4 +105,190 @@ main {
 .tns-slider {
   display: flex;
   align-items: center;
+}
+/* Reset. */
+* {
+  box-sizing: border-box;
+}
+
+/* Panels. */
+.splitview {
+  position: relative;
+  width: 100%;
+  min-height: 45vw;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.panel {
+  position: absolute;
+  width: 100vw;
+  min-height: 45vw;
+  overflow: hidden;
+}
+
+.panel .content {
+  position: absolute;
+  width: 100vw;
+  min-height: 45vw;
+  color: #fff;
+}
+
+.panel .description {
+  width: 25%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+}
+
+.panel img {
+  width: 35%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bottom {
+  background-color: rgb(44, 44, 44);
+  z-index: 1;
+}
+
+.bottom .description {
+  right: 5%;
+  font-weight: 600;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.top {
+  background-color: rgb(255, 247, 5);
+  z-index: 2;
+  width: 50vw;
+  /*-webkit-clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);
+  clip-path: polygon(60% 0, 100% 0, 100% 100%, 40% 100%);*/
+}
+
+.top .description {
+  left: 5%;
+  color: #000;
+  font-weight: 600;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Handle. */
+.handle {
+  height: 100%;
+  position: absolute;
+  display: block;
+  background-color: rgb(253, 171, 0);
+  width: 5px;
+  top: 0;
+  left: 50%;
+  z-index: 3;
+}
+
+/* Skewed. */
+.skewed .handle {
+  top: 50%;
+  transform: rotate(30deg) translateY(-50%);
+  height: 200%;
+  -webkit-transform-origin: top;
+  -moz-transform-origin: top;
+  transform-origin: top;
+}
+
+.skewed .top {
+  transform: skew(-30deg);
+  margin-left: -1000px;
+  width: calc(50vw + 1000px);
+}
+
+.skewed .top .content {
+  transform: skew(30deg);
+  margin-left: 1000px;
+}
+
+/* Responsive. */
+@media (max-width: 900px) {
+  body {
+    font-size: 60%;
+  }
+}
+
+#description-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.description {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.description img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin: 0 20px;
+}
+
+.description.left {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+.description.right {
+  flex-direction: row;
+  text-align: left;
+}
+
+.text {
+  max-width: 300px;
+  flex: 1;
+}
+
+.rope {
+  width: 2px;
+  height: 100px;
+  background-color: #ffd700; /* Yellow gold */
+  position: relative;
+}
+
+.rope:before,
+.rope:after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: #ffd700;
+  border-radius: 50%;
+  top: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.rope:after {
+  top: auto;
+  bottom: -4px;
+}
+
+/* Additional styles to handle description alignment */
+.description.left .text {
+  text-align: right;
+}
+
+.description.right .text {
+  text-align: left;
+}
+
+.description.show {
+  opacity: 1;
+  transform: translateY(0);
 }
