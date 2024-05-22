@@ -1,0 +1,136 @@
+/* Existing CSS */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #ffd700; /* Yellow gold */
+}
+
+.logo {
+  width: 100px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000;
+  font-weight: bold;
+}
+
+main {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#threejs-container {
+  width: 100%;
+  height: 400px;
+  max-width: 1000px; /* Limit the width of the model container */
+  border: 2px solid #ffd700; /* Yellow gold */
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+#products {
+  background-color: #333; /* Dark background color */
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 800px; /* Limit the width of the products section */
+  margin-bottom: 20px;
+}
+
+#products h2 {
+  margin-top: 0;
+  color: #ffd700; /* Yellow gold */
+}
+
+.product-slider {
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  max-width: 800px;
+}
+
+.product-card {
+  flex: 0 0 auto;
+  margin-right: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #444; /* Darker background color */
+  color: #fff;
+  width: 200px; /* Adjust card width as needed */
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+}
+
+.product-details {
+  padding: 10px;
+  text-align: center;
+}
+
+.product-details h2 {
+  margin: 0;
+  color: #ffd700; /* Yellow gold */
+}
+
+.product-details p {
+  margin: 5px 0;
+}
+
+.product-details button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #ffd700; /* Yellow gold */
+  color: #000;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.model-container {
+  width: 100%;
+  height: 200px;
+  background-color: #333;
+  margin: auto;
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  .product {
+    margin: 10px 0;
+  }
+
+  .model-container {
+    max-width: 300px; /* Adjust model width for smaller screens */
+  }
+}

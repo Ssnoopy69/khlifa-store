@@ -3,8 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>E-commerce Website</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <title>Product Slider</title>
+    <link rel="stylesheet" href="style/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css"
+    />
   </head>
   <body>
     <header>
@@ -18,13 +22,13 @@
       </nav>
     </header>
     <main>
-      <section id="threejs-container"></section>
-      <section id="products">
-        <h2>Featured Products</h2>
-        <div id="product-slider" class="product-slider"></div>
-      </section>
+      <div id="threejs-container"></div>
+      <div id="product-slider" class="product-slider tns-slider">
+        <!-- Slider items will be injected here by JavaScript -->
+      </div>
     </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.js"></script>
-    <script type="module" src="./src/main.js"></script>
+    <script type="module" src="src/main.js"></script>
   </body>
 </html>
