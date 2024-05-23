@@ -50,14 +50,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const productDiv = document.createElement("div");
     productDiv.classList.add("product-card");
     productDiv.innerHTML = `
-      <div id="model-${
-        product.id
-      }" class="model-container" style="width: 200px; height: 200px;"></div>
-      <div class="product-details">
-          <h2>${product.name}</h2>
-          <p>Price: $${product.price.toFixed(2)}</p>
-          <button>View Product</button>
-      </div>
+    <div id="model-${
+      product.id
+    }" class="model-container" style="width: 200px; height: 200px;"></div>
+    <div class="product-details">
+        <h2>${product.name}</h2>
+        <p>Price: $${product.price.toFixed(2)}</p>
+        <button data-product-id="${product.id}">Add to Cart</button>
+    </div>
     `;
     productSlider.appendChild(productDiv);
 
@@ -163,6 +163,14 @@ document.addEventListener("DOMContentLoaded", function () {
         console.error(`Error loading model for product ${product.id}`, error);
       }
     );
+  });
+
+  // Add event listeners to "Add to Cart" buttons
+  document.querySelectorAll(".product-details button").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      const productId = event.target.getAttribute("data-product-id");
+      window.location.href = `payment.html?product=${productId}`;
+    });
   });
 
   // Description animation on scroll
