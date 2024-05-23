@@ -10,4 +10,5 @@ export const products = [
   { id: 8, name: "T-shirt 8", price: 54.99, model: "8.glb" },
   { id: 9, name: "T-shirt 9", price: 59.99, model: "9.glb" },
   { id: 10, name: "T-shirt 10", price: 64.99, model: "10.glb" },
+  { id: 11, name: "T-shirt 11", price: 0, model: "10.glb" },
 ];

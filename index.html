@@ -9,6 +9,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/tiny-slider.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
   </head>
   <body>
     <header>
@@ -60,7 +64,10 @@
 
       <section id="description-section">
         <div class="description left">
-          <img src="image1.jpg" alt="Description Image" />
+          <img
+            src="./components/images/catalogtshirt.jpg"
+            alt="Description Image"
+          />
           <div class="text">
             <h2>Description 1</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -68,7 +75,10 @@
         </div>
         <div class="rope"></div>
         <div class="description right">
-          <img src="image2.jpg" alt="Description Image" />
+          <img
+            src="./components/images/fabrictissu.jpg"
+            alt="Description Image"
+          />
           <div class="text">
             <h2>Description 2</h2>
             <p>
@@ -96,7 +106,49 @@
           </div>
         </div>
       </section>
+
+      <section id="contact-section">
+        <h2>Send Us a Review</h2>
+        <form id="review-form">
+          <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required />
+          </div>
+          <div class="form-group">
+            <label for="rating">Rating:</label>
+            <div class="stars">
+              <i class="fas fa-star" data-rating="1"></i>
+              <i class="fas fa-star" data-rating="2"></i>
+              <i class="fas fa-star" data-rating="3"></i>
+              <i class="fas fa-star" data-rating="4"></i>
+              <i class="fas fa-star" data-rating="5"></i>
+            </div>
+            <input type="hidden" id="rating" name="rating" required />
+          </div>
+          <div class="form-group">
+            <label for="review">Review:</label>
+            <textarea id="review" name="review" rows="4" required></textarea>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
     </main>
+
+    <footer>
+      <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank" class="social-icon"
+          ><i class="fab fa-facebook-f"></i
+        ></a>
+        <a href="https://www.instagram.com" target="_blank" class="social-icon"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a href="https://wa.me" target="_blank" class="social-icon"
+          ><i class="fab fa-whatsapp"></i
+        ></a>
+      </div>
+      <p>&copy; 2024 Your Company. All rights reserved.</p>
+    </footer>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.3/min/tiny-slider.js"></script>
     <script type="module" src="src/main.js"></script>
