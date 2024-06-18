@@ -3,6 +3,25 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { products } from "./products.js";
 
 document.addEventListener("DOMContentLoaded", function () {
+  const catalogButton = document.getElementById("catalog-button");
+  const catalogSelection = document.getElementById("catalog-selection");
+  const maleSelection = document.getElementById("male-selection");
+  const femaleSelection = document.getElementById("female-selection");
+
+  catalogButton.addEventListener("click", function () {
+    catalogSelection.classList.remove("hidden");
+  });
+
+  maleSelection.addEventListener("click", function () {
+    window.location.href = "male-catalog.html";
+  });
+
+  femaleSelection.addEventListener("click", function () {
+    window.location.href = "female-catalog.html";
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
   const catalogSection = document.querySelector("main section");
 
   products.forEach((product) => {
